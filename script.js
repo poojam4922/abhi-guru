@@ -2,22 +2,45 @@
 
 
 let form =  document.querySelector('form');
-form.addEventListener('click', (e) =>{
-    e.preventDefault();
-    const name = document.querySelector('.name');
-    const email = document.querySelector('.email');
-    const phone = document.querySelector('.phone');
-    let isValid = false;
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    if(!name.value || !email.value || !phone.value){
-        alert('Please fill all the fields');
+    // Retrieve form input values
+    const name = document.querySelector('.name').value.trim();
+    const email = document.querySelector('.email').value.trim();
+    const phone = document.querySelector('.phone').value.trim();
+
+    // Basic validation
+    if (!name || !email || !phone) {
+        const errorMessage = document.querySelector('.errorMessage');
+        errorMessage.innerText = "Error: All fields are required.";
+        return;
     }
-    if(!isValid){
-        alert('successfully');
-        window.location.href = 'index.html'
+
+    // Email validation using regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        const errorMessage = document.querySelector('.errorMessage');
+        errorMessage.innerText = "Error: Invalid email format.";
+        return;
     }
-    
-})
+
+    // Phone number validation using regex
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+        const errorMessage = document.querySelector('.errorMessage');
+        errorMessage.innerText = "Error: Invalid phone number format (10 digits only).";
+        return;
+    }
+
+    // Clear error message
+    const errorMessage = document.querySelector('.errorMessage');
+    errorMessage.innerText = "";
+
+    // If all validations pass, you can proceed with form submission or further actions
+    console.log("Form submitted successfully!");
+    // Here you can submit the form data to the server or perform any other actions
+});
 
 
 // **************************  explore technology section ****************************

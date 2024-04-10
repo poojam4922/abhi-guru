@@ -215,6 +215,11 @@ body {
   margin-top: 9.6rem;
  
 }
+.form .form-fieldset .errorMessage{
+  font-size: 2rem;
+  margin-bottom: 6rem;
+  color: red;
+}
 
 .form-section .form .form-fieldset {
   padding: 5.2rem 9rem;
@@ -248,13 +253,13 @@ body {
 }
 
 .form-section .form .form-fieldset .input-wrapper>input {
-  width: 100%;
-  min-height: 50px;
+  /* width: 100%; */
+  /* min-height: 50px; */
   padding: 3rem 15rem;
   border-radius: 1.5rem;
   color: var(--white-text-color);
   font-family: var(--inter-fontFamily);
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
   line-height: 2.2rem;
@@ -309,9 +314,9 @@ body {
 
 .banner-image img {
   position: relative;
-  position: relative;
-  right: -3.8rem;
-  top: -7rem;
+  top: -6rem;
+  left: 0rem;
+  max-width: 700px;
 
 }
 
@@ -321,6 +326,7 @@ body {
 .technology-wrapper {
   border: 1px solid var(--white-text-color);
   padding: 4rem 2rem 1.5rem 2rem;
+  margin-top: 10rem;
 }
 
 .technology-wrapper h2 {
